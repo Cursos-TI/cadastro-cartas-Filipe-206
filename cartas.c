@@ -10,6 +10,8 @@ float pib, pib2;
 int pontos, pontos2;
 
 float densidade, densidade2, pibpc, pibpc2;
+float superPoder, superPoder2;
+float inversoDensidade, inversoDensidade2;
 
 //CARTA 1
 printf("CARTA 1\n");
@@ -54,6 +56,14 @@ densidade2 = (float) populacao2 / area2;
 pibpc = (float) pib / populacao;
 pibpc2 = (float) pib2 / populacao2;
 
+inversoDensidade = (float) area / populacao;
+inversoDensidade2 = (float) area2 / populacao2;
+
+ //superpoder
+
+superPoder = (float) populacao + area + pib + pontos + pibpc + inversoDensidade;
+superPoder2 = (float) populacao2 + area2 + pib2 + pontos2 + pibpc2 + inversoDensidade2;
+
 printf("\n");
 
 printf("CARTA 1: \n");
@@ -66,6 +76,7 @@ printf("Pib: R$%f \n", pib);
 printf("Pontos Turisticos: %d \n", pontos);
 printf("Densidade populacional: %.2f hab/km \n", densidade);
 printf("Pib per Capita: R$%.2f \n", pibpc);
+printf("Superpoder: %f \n", superPoder);
 
 printf("\n");
 
@@ -79,6 +90,24 @@ printf("Pib: R$%f \n", pib2);
 printf("Pontos Turisticos: %d \n", pontos2);
 printf("Densidade populacional: %.2f hab/km \n", densidade2);
 printf("Pib per Capita: R$%.2f \n", pibpc2);
+printf("Superpoder: %f \n", superPoder2);
+
+printf("\n");
+
+//COMPARACAO
+
+printf("Comparacao das cartas \n");
+printf("\n");
+
+printf("Populacao: Carta %d venceu (%d)\n", (populacao > populacao2) ? 1 : 2, (populacao > populacao2));
+printf("Area: Carta %d venceu (%d)\n", (area > area2) ? 1 : 2, (area > area2) );
+printf("Pib: Carta %d venceu (%d)\n", (pib > pib2) ? 1 : 2, (pib > pib2));
+printf("Pontos turistiscos: %d venceu (%d)\n", (pontos > pontos2) ? 1 : 2, (pontos > pontos2));
+printf("Densidade Populacional: Carta %d venceu (%d) \n", (densidade < densidade2) ? 1 : 2, (densidade < densidade2));
+printf("Pib per Capita: Carta %d venceu(%d)\n", (pibpc > pibpc2) ? 1 : 2, (pibpc > pibpc2));
+printf("Super Poder: Carta %d venceu (%d)\n", (superPoder > superPoder2) ? 1 : 2, (superPoder > superPoder2));
+
+
 
 
 return 0;
